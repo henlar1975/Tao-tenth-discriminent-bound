@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this mathematical note and acknowledge the cited external theorems."
+type: manuscript
+title: "An Explicit Class-Number-One Cutoff from Recent Real-Zero Gaps"
+authors:
+  - family-names: Larsson
+    given-names: Henric
+    affiliation: Independent researcher
+    orcid: "https://orcid.org/0009-0007-8688-5733"
+    email: "Henric.c.Larsson@gmail.com"
+version: "0.3"

@@ -1,0 +1,271 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{booktabs,microtype,xurl,hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\title{An Explicit Class-Number-One Cutoff from Recent Real-Zero Gaps\\
+\large A response to Tao's tenth-discriminant challenge}
+\author{Henric Larsson\\
+\small Independent researcher\\
+\small \href{https://orcid.org/0009-0007-8688-5733}{ORCID: 0009-0007-8688-5733}\\
+\small \href{mailto:Henric.c.Larsson@gmail.com}{Henric.c.Larsson@gmail.com}}
+\date{20 October 2026\\\small Prepublication draft, version 0.3}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\begin{document}
+\maketitle
+\begin{abstract}
+Assuming the explicit real-zero estimates in Banks (for $q\ge10^{10}$)
+and Lu--Zaman--Zhao (for $q\le10^{10}$), we prove that a negative
+fundamental discriminant $D$ with imaginary-quadratic class number one
+satisfies $|D|<50{,}000$. A short Dirichlet-hyperbola inequality,
+positivity of the coefficients of $\zeta(s)L(s,\chi_D)$ and their
+square-index contribution provide an elementary zero-gap-to-$L(1)$ bridge.
+An exact count of reduced primitive positive binary quadratic forms below
+the cutoff gives the nine familiar fields. The cited zero-free theorems are treated as external inputs rather than
+re-proved here.
+This note is a quantitative extraction, not a new Siegel-zero theorem,
+and does not improve previously known numerical class-number cutoffs.
+\end{abstract}
+\noindent\textbf{Precise source dependencies.}
+We use Banks \cite{banks} for the explicit gap
+$(1-\beta)\log q\ge3/1000$ for real zeros of primitive real Dirichlet
+characters with conductor $q\ge10^{10}$. For $q\le10^{10}$ we use the
+real-axis exclusion $L(\sigma,\chi)\ne0$ at
+$\sigma\ge1-1/(5\log q)$ from Lu--Zaman--Zhao \cite[Theorem~1.1]{lzz}. These are external inputs, not results newly proved in this note. Standard classical
+analytic continuation, the imaginary-quadratic class-number formula and
+proper binary-form/ideal-class correspondence are also used.
+No class-number bridge from Kimura \cite{kimura} or Heegner's
+classification enters the deduction.
+
+\section{Result and quantitative context}
+\begin{proposition}[Effective cutoff from the two cited real-zero bounds]
+Let $D<0$ be a negative fundamental discriminant and let
+$h(D)$ be the class number of $\mathbb Q(\sqrt D)$. Under the two
+Banks/Lu--Zaman--Zhao inputs above,
+\[
+  \boxed{\ h(D)=1\quad\Longrightarrow\quad |D|<50{,}000.\ }
+\]
+An independent exact enumeration of reduced primitive binary quadratic
+forms for $3\le|D|<50{,}000$ gives class number one exactly for
+\[
+ |D|\in\{3,4,7,8,11,19,43,67,163\}.
+\]
+Thus the same assumptions, plus the elementary finite check, reproduce
+the classical complete nine-field list without importing Heegner's
+classification theorem. This is \emph{not} a claim of a new theorem beyond
+existing published work.
+\end{proposition}
+
+Tao's challenge \cite{tao2}, motivated in part by the
+Tao--Green discussion of interpolation determinants \cite{tao1},
+asks for numerical bounds extracted from different approaches to
+Siegel-zero exclusion.  The present proof uses the explicit zero-free
+estimates of \cite{banks,lzz}; it does not effectivize the
+Tao--Green prime-nonresidue estimate directly.
+
+A significant prior-art comparison is the unconditional result of
+Bennett, Martin, O'Bryant and Rechnitzer
+\cite[Proposition~1.10]{bennett}: for a primitive quadratic character
+of conductor $q>6677$, they proved $L(1,\chi)>12/\sqrt q$.
+In the imaginary quadratic case this implies
+$h(D)>12/\pi>3$ whenever $|D|>6677$.
+Thus the cutoff $50{,}000$ below is \emph{not} an improvement over
+previously known numerical class-number bounds.  Its purpose is to
+exhibit a short explicit deduction from the specified 2026
+Banks/Lu--Zaman--Zhao inputs, as a comparison of proof techniques.
+
+\section{An elementary class-number bridge}
+Let $\chi$ be a nonprincipal primitive real character modulo $q$. Put
+\[
+ a(n)=(1*\chi)(n)=\sum_{d\mid n}\chi(d),\qquad
+ A(t)=\sum_{n\le t}a(n),\qquad L_1=L(1,\chi).
+\]
+By the Euler factors, $a(n)\ge0$ for all $n$, $a(1)=1$, and
+\begin{equation}\label{eq:squares}
+ a(m^2)\ge1\quad\text{for every }m\ge1.
+\end{equation}
+
+\begin{lemma}[Explicit Dirichlet-hyperbola estimate]\label{lem:hyperbola}
+For every real $t\ge1$,
+\[
+ \boxed{\ |A(t)-tL_1|\le7q\sqrt t.\ }
+\]
+\end{lemma}
+\begin{proof}
+Put $y=\lfloor\sqrt t\rfloor$ and
+$S_\chi(v)=\sum_{n\le v}\chi(n)$. Since $\chi$ is nonprincipal and
+periodic modulo $q$, complete periods sum to zero; hence
+$|S_\chi(v)|\le q$ for every real $v\ge0$. Dirichlet's test and
+partial summation give
+$\big|L_1-\sum_{d\le y}\chi(d)/d\big|\le2q/y$.
+The exact hyperbola identity is
+\[
+ A(t)=\sum_{d\le y}\chi(d)\Big\lfloor\frac td\Big\rfloor
+  +\sum_{m\le y}S_\chi(t/m)-yS_\chi(y).
+\]
+The first sum differs from $t\sum_{d\le y}\chi(d)/d$ by at most $y$;
+the other two terms contribute at most $2qy$. Therefore
+\[
+ |A(t)-tL_1|\le y+\frac{2qt}{y}+2qy
+ \le(1+6q)\sqrt t\le7q\sqrt t,
+\]
+using $\frac12\sqrt t\le y\le\sqrt t$ and $q\ge1$.
+\end{proof}
+
+\begin{lemma}[Zero gap to $L(1)$]\label{lem:bridge}
+Suppose $q\ge50{,}000$, $0<c\le1/5$, and $L(s,\chi)$ has no
+real zero in $(1-c/\log q,1)$. Then
+\begin{equation}\label{eq:mainbound}
+  \boxed{\quad \sqrt q\,L(1,\chi)\ \ge\
+  \frac{c}{\log q}\left(\frac{13}{8}e^{-3c}\sqrt q-28\right).\quad}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set $\delta=c/\log q$, $\sigma=1-\delta$ and $X=q^3$.
+Here $3/4<\sigma<1$. Since $L_1>0$ for quadratic characters and
+there are no zeros in $(\sigma,1)$, continuity gives $L(\sigma,\chi)\ge0$.
+Also $\zeta(\sigma)<0$, so $\zeta(\sigma)L(\sigma,\chi)\le0$.
+
+With $E(t)=A(t)-L_1t$, partial summation for $\Re(s)>1$ and analytic
+continuation to $\Re(s)>1/2$, $s\ne1$, give the exact identity
+\begin{align*}
+\zeta(s)L(s,\chi)
+&=\sum_{n\le X}\frac{a(n)}{n^s}
+  +\frac{L_1 X^{1-s}}{s-1}
+  -E(X)X^{-s}+s\int_X^\infty E(t)t^{-s-1}\,dt.
+\end{align*}
+The last two terms have total absolute value at most
+\[
+ 7qX^{1/2-\sigma}\left(1+\frac{\sigma}{\sigma-1/2}\right)
+ \le28qX^{1/2-\sigma}=\frac{28e^{3c}}{\sqrt q}.
+\]
+By \eqref{eq:squares}, $\sigma<1$ and $X\ge50^2$,
+\[
+ \sum_{n\le X}\frac{a(n)}{n^\sigma}
+ \ge\sum_{m=1}^{50}\frac1{m^{2\sigma}}
+ \ge\sum_{m=1}^{50}\frac1{m^2}>\frac{13}{8},
+\]
+where the last inequality is an exact finite rational sum.
+It follows that
+\[
+ 0\ge\zeta(\sigma)L(\sigma,\chi)
+ \ge\frac{13}{8}-\frac{L_1 X^\delta}{\delta}
+       -\frac{28e^{3c}}{\sqrt q}.
+\]
+As $X^\delta=q^{3c/\log q}=e^{3c}$, rearrangement proves
+\eqref{eq:mainbound}.
+\end{proof}
+
+\section{Two exact numerical regimes}
+For fundamental $D=-q$ with $q>4$, the analytic class-number formula reads
+\[
+ h(D)=\frac{\sqrt q}{\pi}L(1,\chi_D).
+\]
+For every fixed $c>0$, the function
+\[
+ f_c(q)=\frac{\frac{13}{8}e^{-3c}\sqrt q-28}{\log q}
+\]
+is strictly increasing for $q>e^2$, since its derivative has numerator
+$\frac{13}{8}e^{-3c}\sqrt q(\frac12\log q-1)+28>0$.
+
+\paragraph{Range $50{,}000\le q\le10^{10}$.}
+Use the Lu--Zaman--Zhao zero exclusion \cite[Theorem~1.1]{lzz}, with $c=1/5$.
+Exact rational checks establish
+\[
+ e^{-3/5}>\frac{100}{183},\quad
+ \sqrt{50{,}000}>\frac{447}{2},\quad
+ \log(50{,}000)<\frac{1083}{100},\quad \pi<\frac{22}{7}.
+\]
+The exponential bound uses a degree-four Taylor polynomial with a
+dominated geometric tail, and the logarithm bound follows from
+$e^{10}>22{,}000$ and $e^{83/100}>25/11$, both from finite positive
+Taylor sums. Therefore \eqref{eq:mainbound} gives the \emph{strict}
+bound, uniformly throughout this range,
+\[
+ h(D)>\frac{(1/5)\left[(13/8)(100/183)(447/2)-28\right]}
+                  {(22/7)(1083/100)}
+      =\frac{1455755}{1453386}>1.
+\]
+\paragraph{Range $q\ge10^{10}$.}
+Apply Banks's large-conductor result \cite{banks} with $c=3/1000$.
+Now $e^{-9/1000}>991/1000$, $\sqrt q\ge100{,}000$ and
+$\log(10^{10})<24$ (indeed $\log10<12/5$, from a finite Taylor sum).
+By the same monotonicity,
+\[
+ h(D)>\frac{(3/1000)\left[(13/8)(991/1000)(100{,}000)-28\right]}
+                  {(22/7)\cdot24}
+       =\frac{2254133}{352000}>1.
+\]
+These inequalities prove the claimed cutoff $|D|<50{,}000$.
+
+\section{Finite exact enumeration and independence}
+For $q=|D|<50{,}000$, enumerate \emph{negative fundamental}
+discriminants without class-number tables. They are precisely
+$D=-q$ with either $D\equiv1\pmod4$ squarefree or
+$D=4m$, where $m\equiv2,3\pmod4$ is squarefree.
+For each such $D$, count the positive primitive reduced integral
+binary quadratic forms
+\[
+ (a,b,c):\quad b^2-4ac=D,\quad |b|\le a\le c,\quad
+ \gcd(a,b,c)=1,
+\]
+with $b\ge0$ when $|b|=a$ or $a=c$. It suffices to check
+$1\le a\le\lfloor\sqrt{q/3}\rfloor$.
+By the classical correspondence with proper ideal classes, this
+count equals $h(D)$.
+
+Two independent source-code implementations were used. Enumerator A loops
+through all fundamental discriminants and then through $(a,b)$; enumerator B
+loops through reduced triples $(a,b,c)$ and groups by discriminant. Both
+find exactly $15{,}195$ negative fundamental discriminants in the
+range and agree \emph{on every single class-number count}. Their unique
+class-number-one values are
+\[
+  \boxed{3,4,7,8,11,19,43,67,163.}
+\]
+These correspond to $d=3,1,7,2,11,19,43,67,163$ in Tao's
+$\mathbb Q(\sqrt{-d})$ squarefree-radicand notation.
+
+\section{Scope and AI assistance}
+This note does \emph{not} make Tao--Green's unquantified prime-nonresidue
+estimate explicit. Instead, it uses Banks's explicit determinant-derived
+real-zero gap and a separate finite zero computation of Lu--Zaman--Zhao.
+Kimura's recent work \cite{kimura} gives considerably broader class-number bounds and
+formal verification with a different argument; the elementary bridge here
+is presented for clarity and quantitative comparison, with no claim of
+first discovery of its constituent techniques.
+
+\paragraph{AI assistance.}
+This human-directed investigation used GPT-6 (Extra High) to assist with
+mathematical derivation, exact computation and exposition. The deduction
+and finite checks were subsequently independently reviewed by a separate
+fresh-context GPT-Pro model. That review accepted the cited Banks and
+Lu--Zaman--Zhao zero-free results as inputs; it was an AI review, not
+human peer review. Attribution for those analytic results belongs to
+their original authors and the underlying OpenAI mathematical work.
+
+\paragraph{Notation.}
+The bound is for the absolute field discriminant $|D|$, which equals the
+conductor of the primitive quadratic character. Tao's nine squarefree
+radicands $d=1,2,3,7,11,19,43,67,163$ correspond to
+$|D|=4,8,3,7,11,19,43,67,163$.
+
+\begin{thebibliography}{9}
+\sloppy
+\bibitem{tao1} T. Tao, \emph{A sketch of the proof of non-existence of Siegel zeroes}, 19 Oct. 2026,
+\url{https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/}.
+\bibitem{tao2} T. Tao, \emph{An experimental AI-math challenge: using tenth discriminant bounds to explore arguments ruling out Siegel zeroes}, 20 Oct. 2026,
+\url{https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/}.
+\bibitem{banks} W. D. Banks, \emph{On the OpenAI proof that Landau--Siegel zeros do not exist}, arXiv:2610.15483, 2026, \url{https://arxiv.org/abs/2610.15483}.
+\bibitem{lzz} R. F. Lu, A. Zaman, and H. Zhao, \emph{Numerical Computations Concerning Landau--Siegel Zeros}, arXiv:2602.03626, 2026, \url{https://arxiv.org/abs/2602.03626}.
+\bibitem{bennett} M. A. Bennett, G. Martin, K. O'Bryant, and A. Rechnitzer,
+\emph{Explicit bounds for primes in arithmetic progressions},
+\emph{Illinois J. Math.} \textbf{62} (2018), 427--532, Proposition~1.10,
+\url{https://doi.org/10.1215/ijm/1552442669}.
+\bibitem{kimura} I. Kimura, \emph{Imaginary quadratic fields of class number at most 2000}, arXiv:2610.21511, 2026, \url{https://arxiv.org/abs/2610.21511}. (Not used as a bridge.)
+\end{thebibliography}
+\end{document}
