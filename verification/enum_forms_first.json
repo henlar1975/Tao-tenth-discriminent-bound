@@ -1,0 +1,17 @@
+{
+  "class_number_one_absolute_fundamental_discriminants": [
+    3,
+    4,
+    7,
+    8,
+    11,
+    19,
+    43,
+    67,
+    163
+  ],
+  "counts_sha256": "70896897a71b27833e8182d23a8abb80378dbd66bae31feb820b3ded2d517956",
+  "fundamental_discriminants": 15195,
+  "method": "forms-first",
+  "passed": true
+}

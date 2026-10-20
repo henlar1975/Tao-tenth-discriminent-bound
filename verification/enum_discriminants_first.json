@@ -1,0 +1,19 @@
+{
+  "class_number_one_absolute_fundamental_discriminants": [
+    3,
+    4,
+    7,
+    8,
+    11,
+    19,
+    43,
+    67,
+    163
+  ],
+  "csv_sha256": "3f0ab4721daeca3afc53353fe57dc4c8eecb7137c2a521caf690bd4889389b06",
+  "fundamental_discriminants": 15195,
+  "max_class_number": 357,
+  "method": "fundamental-discriminant-first",
+  "passed": true,
+  "range": "3 <= |D| < 50000"
+}

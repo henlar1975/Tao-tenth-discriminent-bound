@@ -1,0 +1,16 @@
+{
+  "class_number_one_excluded_for_q_ge_cutoff": true,
+  "dependency": "Banks 2610.15483 explicit gap q>=10^10; Lu-Zaman-Zhao numerical gap q<=10^10 as quoted in Banks; neither reverified here",
+  "exp_three_fifths_upper_fraction": "45553/25000",
+  "large_regime_h_strict_lower_decimal": 6.403786931818182,
+  "large_regime_h_strict_lower_fraction": "2254133/352000",
+  "log_50000_upper": "1083/100",
+  "no_analytic_lemmas_verified_by_script": true,
+  "q_cutoff": 50000,
+  "small_regime_h_strict_lower_decimal": 1.0016299868032306,
+  "small_regime_h_strict_lower_fraction": "1455755/1453386",
+  "square_mass_50_gt_13_over_8": true,
+  "status": "PASS EXACT RATIONAL CHECKS",
+  "taylor_exp083_lower_gt_25_over_11": true,
+  "taylor_exp10_lower_gt_22000": true
+}
